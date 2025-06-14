@@ -1,0 +1,362 @@
+@charset "UTF-8";
+
+/******************************
+              MAIN
+******************************/
+/* -------------------- MAIN COMMON -------------------- */
+.main{
+    width: 85%;
+    margin-left: 15%;
+}
+.main::after{content:""; display: block; clear: both;}
+article{
+    float: left;
+    width: 20%; height: 25vh; min-height: 210px;
+    background-repeat: no-repeat; background-position: center; background-size: cover;
+    transition: all .3s;
+}
+article > a{
+    display: block;
+    width: 100%; height: 100%;
+    padding: 30px 40px;
+}
+
+/* TXT */
+.txt:hover{background-color: #889f84;}
+.txt:hover .txt-box .tit,
+.txt:hover .txt-box .desc{color: #fff;}
+
+/* TXT BOX */
+.txt-box .tit{
+    font-weight: 600; font-size: 2.2rem; color: #889f84;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all .3s;
+}
+.txt-box .tit span{
+    position: relative;
+    transition: all .3s;
+}
+.txt-box .tit span::before{content: "";
+    width: 0; height: 2px;
+    background-color: #dee6dd;
+    position: absolute; left: 0; bottom: -4px;
+    transform-origin: left center;
+    transition: all .3s;
+}
+.txt-box .tit span::after{content: attr(txt);
+    color: #fff;
+    position: absolute; left: 0;
+    opacity: 0;
+    transform: translate3d(100%, 0, 0); transform-origin: right center;
+    transition: all .3s;
+}
+.txt:hover .txt-box .tit span::before{width: 100%;}
+.txt:hover .txt-box .tit span::after{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.txt-box .desc{transition: all .3s;}
+.txt-box .desc span{display: block;}
+.txt-box .btn-more{
+    width: 120px; height: 35px;
+    border: 1px solid #999;
+    line-height: 35px; text-align: center; color: #555;
+    background-color: rgba(255, 255, 255, .4);
+    position: relative;
+    transition: all .3s;
+}
+.txt-box .btn-more::before{content: "";
+    display: block;
+    width: 0; height: 100%;
+    position: absolute; left: 0; top: 0; z-index: -1;
+    transition: all .3s;
+}
+.txt-box .btn-more:hover{
+    background-color: transparent;
+    color: #fff;
+}
+.txt-box .btn-more:hover::before{
+    width: 100%;
+    background-color: #111;
+}
+
+
+/* -------------------- VISUAL -------------------- */
+.visual{width: 60%; height: 50vh; min-height: 420px;}
+.visual .visual-video video{
+    width: 100%; height: 50vh; min-height: 420px;
+    object-fit: cover;
+}
+
+
+/* -------------------- BRAND -------------------- */
+.brand{width: 40%;}
+
+
+/* -------------------- MATERIAL -------------------- */
+.material{background-color: #dee6dd;}
+.material.img{background: url(../img/main-material-img.jpg) no-repeat center / cover;}
+.material.img a{
+    display: flex; justify-content: center; align-items: center;
+    text-align: center;
+    position: relative;
+    transition: all .3s;
+}
+.material.img .txt-box{
+    color: #fff;
+    width: 100%;
+    left: 20px;
+    position: absolute; left: 50%; top: 70%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition-property: top, opacity; transition-duration: .3s;
+}
+.material.img .txt-box .tit{color: #fff;}
+.material.img:hover a{background-color: rgba(136, 159, 132, .8);}
+.material.img:hover .txt-box{
+    top: 50%;
+    opacity: 1;
+}
+
+
+/* -------------------- GIFT -------------------- */
+.gift{
+    height: 50vh; min-height: 420px;
+    border: 0px solid #889f84;
+    background: url(../img/main-gift.jpg) no-repeat center / cover;
+}
+.gift a{
+    display: flex; align-items: flex-end;
+    color: #fff;
+    transition: all .3s;
+}
+.gift:hover{border: 15px solid #889f84;}
+.gift:hover a{padding: 20px 25px;}
+
+
+/* -------------------- BEST -------------------- */
+.best{background-color: #f3f1e5;}
+
+
+/* -------------------- PROMOTION -------------------- */
+.promotion{width: 60%;}
+.promotion .promotionSwiper .swiper-slide{
+    width: 100%; height: 25vh; min-height: 210px;
+    padding: 50px 10%;
+    background-repeat: no-repeat; background-position: center; background-size: cover;
+}
+.promotion .promotionSwiper .slide1{background-image: url(../img/main-promotion-01.jpg);}
+.promotion .promotionSwiper .slide2{background-image: url(../img/main-promotion-02.jpg);}
+.promotion .promotionSwiper .slide3{background-image: url(../img/main-promotion-03.jpg);}
+.promotion .promotionSwiper .txt-box{
+    display: flex; flex-direction: column;
+    height: 100%;
+}
+.promotion .promotionSwiper .txt-box .tit{
+    margin-bottom: 5px;
+    color: #333;
+}
+.promotion .promotionSwiper .txt-box .desc{
+    margin-bottom: auto;
+    color: #555;
+}
+
+
+/* -------------------- PRODUCT -------------------- */
+.product{width: 60%;}
+.product ul{display: flex;}
+.product .product-list{
+    width: calc( 100% / 3 ); height: 25vh; min-height: 210px;
+    background-color: #000;
+    overflow: hidden;
+}
+.product .product-list a{
+    display: flex; justify-content: center; align-items: center;
+    width: 100%; height: 100%;
+    position: relative;
+}
+.product .product-list .product-img{width: 100%; height: 100%;}
+.product .product-list .product-img img{
+    width: 100%; height: 100%;
+    opacity: .7;
+    object-fit: cover;
+}
+.product .product-list .product-box{
+    display: flex; flex-direction: column; justify-content: flex-end;
+    width: calc( 100% - 20px ); height: calc( 25vh - 20px ); min-height: 190px;
+    padding: 15px 20px;
+    border: 1px solid #f6f3ef;
+    color: #fff;
+    position: absolute; left: 10px; top: 10px;
+    transition: all .3s;
+}
+.product .product-list .product-tit{
+    margin-bottom: 10px;
+    font-weight: 600; font-size: 1.8rem;
+}
+.product .product-list .product-desc{
+    margin-bottom: 20px;
+    font-size: 1.5rem; color: #f6f3ef;
+}
+.product .product-list .product-price em{
+    margin-right: 10px;
+    font-weight: 600; font-size: 1.8rem;
+}
+.product .product-list .product-price span{font-size: 1.4rem; color: #ddd; text-decoration: line-through;}
+.product .product-list:hover .product-box{background-color: rgba(136, 159, 132, .6);}
+
+
+/******************************
+      max-width: 1399px;
+******************************/
+@media all and ( max-width: 1399px ) {
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    .main{
+        width: 100%;
+        margin-left: 0;
+    }
+    article{height: calc(( 100vh - 90px ) / 4 );}
+
+    /* -------------------- VISUAL -------------------- */
+    .visual{height: calc(( 100vh - 90px ) / 2 );}
+    .visual .visual-video video{height: calc(( 100vh - 90px ) / 2 );}
+
+    /* -------------------- GIFT -------------------- */
+    .gift{height: calc(( 100vh - 90px ) / 2 );}
+
+    /* -------------------- PROMOTION -------------------- */
+    .promotion .promotionSwiper .swiper-slide{height: calc(( 100vh - 90px ) / 4 );}
+    .product .product-list{height: calc(( 100vh - 90px ) / 4 );}
+    .product .product-list .product-box{height: calc((( 100vh - 90px ) / 4 ) - 20px );}
+}
+
+
+/******************************
+      max-width: 1279px;
+******************************/
+@media all and ( max-width: 1279px ) {
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    article{width: 25%;}
+
+    /* -------------------- VISUAL -------------------- */
+    .visual{width: 75%;}
+
+    /* -------------------- BRAND -------------------- */
+    .brand{width: 25%;}
+    .brand .txt-box p:nth-of-type(1){display: none;}
+
+    /* -------------------- MATERIAL -------------------- */
+    .material.img{display: none;}
+
+    /* -------------------- PROMOTION -------------------- */
+    .promotion{width: 50%;}
+
+    /* -------------------- PRODUCT -------------------- */
+    .product{width: 50%;}
+    .product .product-list{width: 50%;}
+    .product .product-list.list3{display: none;}
+}
+
+
+/******************************
+      max-width: 1023px;
+******************************/
+@media all and ( max-width: 1023px ) {
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    article{width: calc( 100% / 3 );}
+
+    /* -------------------- VISUAL -------------------- */
+    .visual{width: 100%;}
+
+    /* -------------------- BRAND -------------------- */
+    .brand{width: calc( 100% / 3 );}
+
+    /* -------------------- GIFT -------------------- */
+    .gift{
+        height: calc(( 100vh - 90px ) / 4 ); min-height: 210px;
+        background-image: linear-gradient( rgba(0, 0, 0, .4), rgba(0, 0, 0, .4) ), url(../img/main-gift.jpg);
+    }
+
+    /* -------------------- PROMOTION -------------------- */
+    .promotion{width: calc(( 100% / 3 ) * 2 );}
+
+    /* -------------------- PRODUCT -------------------- */
+    .product{width: calc(( 100% / 3 ) * 2 );}
+}
+
+
+/******************************
+      max-width: 767px;
+******************************/
+@media all and ( max-width: 767px ) {
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    article{width: 50%; height: calc(( 100vh - 110px ) * 0.25 );}
+
+    /* -------------------- VISUAL -------------------- */
+    .visual{width: 100%; height: calc(( 100vh - 110px ) * 0.5 );}
+    .visual .visual-video video{height: calc(( 100vh - 110px ) * 0.5 );}
+
+    /* -------------------- GIFT -------------------- */
+    .gift{height: calc(( 100vh - 110px ) * 0.25 );}
+
+    /* -------------------- BRAND -------------------- */
+    .brand{width: 50%; }
+
+    /* -------------------- PROMOTION -------------------- */
+    .promotion{width: 100%;}
+    .promotion .promotionSwiper .swiper-slide{height: calc(( 100vh - 110px ) * 0.25 );}
+
+    /* -------------------- PRODUCT -------------------- */
+    .product{width: 100%;}
+    .product .product-list{height: calc(( 100vh - 110px ) * 0.25 );}
+    .product .product-list .product-box{height: calc((( 100vh - 110px ) * 0.25 ) - 20px );}
+
+    /* -------------------- REVIEW -------------------- */
+    .review{display: none;}
+}
+
+
+/******************************
+      max-width: 639px;
+******************************/
+@media all and ( max-width: 639px ) {
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    .txt-box .tit{font-size: 2rem;}
+    .txt-box .tit span::before{bottom: -3px;}
+}
+
+
+/******************************
+      max-width: 479px;
+******************************/
+@media all and ( max-width: 479px ) {    
+    /******************************
+                  MAIN
+    ******************************/
+    /* -------------------- MAIN COMMON -------------------- */
+    article{display: none;}
+
+    /* -------------------- VISUAL -------------------- */
+    .visual{
+        display: block;
+        height: 100vh;
+    }
+    .visual .visual-video video{height: 100vh;}
+}
